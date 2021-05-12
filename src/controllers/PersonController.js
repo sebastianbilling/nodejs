@@ -53,9 +53,6 @@ personRouter.put('/', (request, response) => {
     password: body.password
   }
 
-  console.log(personId)
-  console.log(person)
-
   Person.findByIdAndUpdate(personId, person, { new: true })
   .then(updatePerson => {
     response.json(updatePerson)
